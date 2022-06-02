@@ -7,7 +7,7 @@ export default async function handler(req, res){
 
     // console.log(query);
     const db = client.db("sample_mflix");
-    const data = db.collection("movies").findOne({_id: query})
+    const data = await db.collection("movies").findOne({_id: query})
 
     const movies = JSON.parse(JSON.stringify(data))
     console.log("here")
